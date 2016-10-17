@@ -3,13 +3,13 @@
 @section('content')
 
     <div class="container">
-        <h3>Editando Cliente: {{$client->name}}</h3>
+        <h3>Editando Cliente: {{$client->user->name}}</h3>
 
         @include('errors._check')
 
         {!! Form::model($client, ['route'=>['admin.clients.update', $client->id]])!!}
 
-        @include('admin.clients._form')
+        @include('admin.clients._formedit')
 
         <div class="form-group">
             {!! Form::submit('Salvar',['class'=>'btn btn-primary']) !!}

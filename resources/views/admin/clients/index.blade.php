@@ -19,7 +19,7 @@
             @foreach($clients as $client)
                 <tr>
                     <td>{{ $client->id }}</td>
-                    <td>{{ $client->users->name}}</td>
+                    <td>{{ $client->user->name}}</td>
                     <td>
                         <a href="{{route('admin.clients.edit', ['id'=>$client->id])}}" class="btn btn-default btn-sm">Editar</a>
                         <a href="{{route('admin.clients.destroy', ['id'=>$client->id])}}" class="btn btn-warning btn-sm">Remover</a>
