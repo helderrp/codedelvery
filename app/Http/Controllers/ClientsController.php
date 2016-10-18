@@ -47,7 +47,11 @@ class ClientsController extends Controller
     public function update(AdminClientRequest $request, $id)
     {
         $data = $request->all();
+        $client = $this->repository->find($id);
+
         $this->repository->update($data, $id);
+        $this->userRepository->update($data, $client->user->id);
+
         return redirect()->route('admin.clients.index');
     }
 
