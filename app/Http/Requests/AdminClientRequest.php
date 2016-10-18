@@ -24,10 +24,8 @@ class AdminClientRequest extends Request
     public function rules()
     {
         return [
-//            'name' => 'required|min:3',
-//            'description' => 'required',
-//            'price'=>'required',
-//            'category_id'=>'required'
+            'user.name' => 'required|min:3',
+            'user.email' => 'required|email'
         ];
     }
 }

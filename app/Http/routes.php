@@ -42,6 +42,7 @@ Route::group(['prefix'=>'admin', 'middleware'=>'auth.checkrole', 'as'=>'admin.']
 
         Route::get('', ['as' => 'index', 'uses' => 'ClientsController@index']);
         Route::get('create', ['as' => 'create', 'uses' => 'ClientsController@create']);
+        Route::get('get-cidades/{id}', ['as' => 'city', 'uses' => 'ClientsController@cidades']);
         Route::get('edit/{id}', ['as' => 'edit', 'uses' => 'ClientsController@edit']);
         Route::get('destroy/{id}', ['as' => 'destroy', 'uses' => 'ClientsController@destroy']);
         Route::post('store', ['as' => 'store', 'uses' => 'ClientsController@store']);
