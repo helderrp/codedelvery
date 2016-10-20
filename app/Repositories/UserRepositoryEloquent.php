@@ -14,7 +14,12 @@ use CodeDelivery\Validators\UserValidator;
  */
 class UserRepositoryEloquent extends BaseRepository implements UserRepository
 {
-    
+
+    public function getDeliverymen(){
+        return $this->model->where(['role'=>'deliveryman'])->lists('name', 'id');
+    }
+
+
     /**
      * Specify Model class name
      *

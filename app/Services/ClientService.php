@@ -25,7 +25,7 @@ class ClientService
         $this->clientRespository->update($data, $id);
         $userId = $this->clientRespository->find($id, ['user_id']);
         $this->userRespository->update($data['user'], $userId->user_id);
-    }
+    }   
     
     public function create(array $data){
         $data['user']['password'] = bcrypt(123456);
